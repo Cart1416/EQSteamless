@@ -18,6 +18,8 @@ Wait for game to show login screen
 On Windows: run startAuthProxy.bat  
 On Linux: run startAuthProxy.sh in terminal  
 In game press F1 to reload the login screen (or any other way to reload it)  
+<br>
+On Linux it is important to run the sh script after the game reaches the login screen or else it won't be able to connect
 ## Requirements
 Python 3.14 (3.15 may not work yet)  
 login.py will install the modules for you  

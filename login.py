@@ -46,7 +46,7 @@ try:
         file.write(body)
 
     print("authentication written to auth.txt, run EpicQuest then startAuthProxy.sh or .bat")
-    print("It is important to run the sh or bat script after the game reaches the login screen or else it won't be able to connect")
+    print("On Linux it is important to run the sh script after the game reaches the login screen or else it won't be able to connect")
     print("You may need to press F1 in game to reload the login screen after running script (reloadLoginScreen.dll should be installed)")
 
 except requests.RequestException as error:
