@@ -23,6 +23,6 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-    mitm/mitmweb.exe --mode local:RecRoom.exe -s RRauthenticate.py
+    start mitm/mitmweb.exe --mode local:RecRoom.exe --set web_open_browser=false -s RRauthenticate.py
 :--------------------------------------
 
