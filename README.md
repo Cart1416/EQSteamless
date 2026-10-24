@@ -19,7 +19,7 @@ On Windows: run startAuthProxy.bat
 On Linux: run startAuthProxy.sh in terminal  
 In game press F1 to reload the login screen (or any other way to reload it)  
 ## Requirements
-Python3  
+Python 3.14 (3.15 may not work yet)  
 login.py will install the modules for you  
 ## AI
 Only part made with AI was LoginScreenReload because C# sucks  
