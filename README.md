@@ -28,4 +28,4 @@ Everything else is human slop
 [Mitmproxy](https://www.mitmproxy.org/)  
 [Goldberg](https://mr_goldberg.gitlab.io/goldberg_emulator/)  
 [EpicQuest](https://epicquest.app)  
-LoginScreenReload  
+[LoginScreenReload](https://github.com/Cart1416/RR-LoginScreenReload)  
