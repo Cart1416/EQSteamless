@@ -4,7 +4,18 @@ This works by using a web auth token to log into the game instead of getting one
 The login script does **not** have the option to create an account, please make an account on another device or ask a friend.  
 Note: you may be randomly logged out every few hours (idk the exact time) just run login.py again if the game is stuck in a loop  
 This also works with [Goldberg](https://mr_goldberg.gitlab.io/goldberg_emulator/)  
-## How to use
+## Requirements
+Python 3.14 (3.15 may not work yet)  
+python modules will be installed automatically 
+## How to use (gui)
+Download repo (green code btn -> download zip)  
+Extract zip  
+Put these files into EpicQuest game folder (replace existing files)  
+Run eqSteamlessGUI.pyw  
+login in the gui  
+run game  
+click start proxy  
+## How to use (command line)
 **First time setup:**  
 Download repo (green code btn -> download zip)  
 Extract zip  
@@ -19,10 +30,7 @@ On Windows: run startAuthProxy.bat
 On Linux: run startAuthProxy.sh in terminal  
 In game press F1 to reload the login screen (or any other way to reload it)  
 <br>
-On Linux it is important to run the sh script after the game reaches the login screen or else it won't be able to connect
-## Requirements
-Python 3.14 (3.15 may not work yet)  
-login.py will install the modules for you  
+On Linux it is important to run the sh script after the game reaches the login screen or else it won't be able to connect 
 ## AI
 Only part made with AI was LoginScreenReload because C# sucks  
 Everything else is human slop  
