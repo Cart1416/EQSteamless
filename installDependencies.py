@@ -4,7 +4,8 @@ import importlib.util
 
 packages = {
     "requests": "requests",
-    "mitmproxy": "mitmproxy"
+    "mitmproxy": "mitmproxy",
+    "PySide6": "PySide6"
 }
 
 for module, package in packages.items():

@@ -1,13 +1,14 @@
 import installDependencies
 
-import requests
+import requests # type: ignore
 import getpass
 import json
 
+modifyKey = True
+valueToPutInKey = "aGVsbG8gcmFuZG9tIHBlcnNvbiwgZ2FiZSBuZXJmZWQgdGhlIHdlYiBhdXRoIHNvIEkgcHV0IHNvbWUgZ2FyYmFnZSBpbiBoZXJlIHRvIG1ha2UgaXQgd29yayBhZ2Fpbg=="
+
 url = "https://auth.epicquest.app/connect/token/web"
 
-username = input("Username: ")
-password = getpass.getpass("Password: ")
 
 headers = {
     "Origin": "https://epicquest.app",
@@ -20,34 +21,49 @@ headers = {
     )
 }
 
-data = {
-    "username": username,
-    "password": password
-}
-
-try:
-    response = requests.post(
-        url,
-        headers=headers,
-        files={
-            "username": (None, username),
-            "password": (None, password)
-        },
-        timeout=30
-    )
-
+def authenticate(username, password):
+    success = False
     try:
-        body = json.dumps(response.json(), indent=4)
-    except ValueError:
-        body = response.text
+        response = requests.post(
+            url,
+            headers=headers,
+            files={
+                "username": (None, username),
+                "password": (None, password)
+            },
+            timeout=30
+        )
 
-    with open("auth.txt", "w", encoding="utf-8") as file:
-        print(f"status: {response.status_code}")
-        file.write(body)
+        try:
+            body = json.dumps(response.json(), indent=4)
+            newBodyJson = response.json()
+            if modifyKey == True:
+                newBodyJson["key"] = valueToPutInKey
+                body = json.dumps(newBodyJson, indent=4)
+            if response.json().get("error") is not None:
+                print(f"Error: {response.json().get('error')}")
+                print(body)
+            else:
+                success = True
+                print("Authentication successful")
+        except ValueError:
+            body = response.text
 
-    print("authentication written to auth.txt, run EpicQuest then startAuthProxy.sh or .bat")
+        with open("auth.txt", "w", encoding="utf-8") as file:
+            file.write(body)
+
+        print("authentication written to auth.txt")
+
+        return {"success": success, "error_description": response.json().get("error_description")}
+
+    except requests.RequestException as error:
+        print("fail:", error)
+
+if __name__ == "__main__":
+    username = input("Username: ")
+    password = getpass.getpass("Password: ")
+    authenticate(username, password)
+    print("run EpicQuest then startAuthProxy.sh or .bat")
     print("On Linux it is important to run the sh script after the game reaches the login screen or else it won't be able to connect")
     print("You may need to press F1 in game to reload the login screen after running script (reloadLoginScreen.dll should be installed)")
 
-except requests.RequestException as error:
-    print("fail:", error)
