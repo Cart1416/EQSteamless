@@ -1,5 +1,6 @@
 # EpicQuest steamless
-**EpicQuest oauth may be broken rn**
+## EpicQuest oauth may be broken rn
+This program will not work until it is fixed
 <br>
 <br>
 Play **EpicQuest** without **Steam**!  
