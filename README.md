@@ -1,6 +1,7 @@
 # EpicQuest steamless
 **EpicQuest oauth may be broken rn**
 <br>
+<br>
 Play **EpicQuest** without **Steam**!  
 This works by using a web auth token to log into the game instead of getting one with Steam  
 The login script does **not** have the option to create an account, please make an account on another device or ask a friend.  
