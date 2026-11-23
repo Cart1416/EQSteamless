@@ -1,7 +1,4 @@
 # EpicQuest steamless
-## EpicQuest oauth may be broken rn
-This program will not work until it is fixed
-<br>
 <br>
 Play **EpicQuest** without **Steam**!  
 This works by using a web auth token to log into the game instead of getting one with Steam  
@@ -16,6 +13,7 @@ Download repo (green code btn -> download zip)
 Extract zip  
 Put these files into EpicQuest game folder (replace existing files)  
 Run eqSteamlessGUI.pyw  
+May take a few minutes to install packages  
 login in the gui  
 run game  
 click start proxy  
