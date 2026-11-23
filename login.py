@@ -23,14 +23,17 @@ headers = {
 
 def authenticate(username, password):
     success = False
+    form = {
+        "username": username,
+        "password": password,
+        "Client": "eq_web",
+        "RedirectUri": "https://epicquest.app/login/post",
+    }
     try:
         response = requests.post(
             url,
             headers=headers,
-            files={
-                "username": (None, username),
-                "password": (None, password)
-            },
+            files={key: (None, value) for key, value in form.items()},
             timeout=30
         )
 
